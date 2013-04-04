@@ -1,10 +1,12 @@
 # clojure-intro-workshop
 
-A Clojure library designed to ... well, that part is up to you.
+## pre requisites
 
-## Usage
-
-FIXME
+- make sure you have [leiningen](http://leiningen.org/) installed
+- checkout the project
+- in the project folder run `lein deps`
+	- it should install all the dependencies
+	- you can start a interactive repl with `lein repl`
 
 ## License
 
