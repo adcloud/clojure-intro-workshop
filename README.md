@@ -1,5 +1,14 @@
 # clojure-intro-workshop
 
+This is a project skeleton for our clojure-intro-workshop.
+
+It contains
+
+- a project skeleton including rendering code for a [game of life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life)
+- a collection of code examples for typical tasks
+
+
+
 ## pre requisites
 
 - make sure you have [leiningen](http://leiningen.org/) installed
