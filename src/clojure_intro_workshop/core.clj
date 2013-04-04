@@ -1,6 +1,60 @@
-(ns clojure-intro-workshop.core)
+(ns clojure-intro-workshop.core
+  (:use quil.core))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn create-world
+  "Return a vector of vectors that builds a 2D field
+  with the given width and height, randomly populated with 0 and 1"
+  ([width height]
+  (apply vector
+         (map  (fn [y]
+                  (apply  vector
+                          (map (fn [_] (rand-int 2))
+                               (range width))))
+                (range height)))))
+
+(defn world-width [world]
+  (count (nth world 0)))
+
+(defn world-height [world]
+  (count world))
+
+(defn element-at [world [x y]]
+  (nth (nth world y) x))
+
+
+;; seting up state
+;; --------------------------
+(def world (agent (create-world 50 40)))
+
+
+;; rendering functions
+;; --------------------------
+(defn setup []
+  (smooth)
+  (frame-rate 20)
+  (background 0)) ;; black background
+
+(defn draw []
+  (stroke 0)
+  (stroke-weight 0)
+  (let [tile-width (/ (width) (world-width @world))
+        tile-height (/ (height) (world-height @world))]
+    (dorun ;; force evaluation of lazy sequenz
+      (for [x (range (world-width @world))
+            y (range (world-height @world))]
+        (do ;; we do our drawing side effect here
+          ;; set fill based on cell alive state
+          (fill (* 255 (element-at @world [x y])))
+          ;; draw a rect for each cell
+          (rect (* x tile-width) (* y tile-height)
+                tile-width tile-height))))))
+
+
+;; main function
+;; --------------------------
+(defn -main [& args]
+  (defsketch example
+  :title "Sketch"
+  :setup setup
+  :draw draw
+  :size [(* (world-width @world) 15) (* (world-height @world) 15)]))
