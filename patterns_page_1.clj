@@ -28,7 +28,8 @@
 (:key some-map)     ;; "value"
 (some-map :key)     ;; "value"
 (get some-map :missing-key "default") ;; "default"
-(vals some-map) ;; "value"
+(keys some-map) ;; [:key]
+(vals some-map) ;; ["value"]
 
 ;; changing a map
 (assoc some-map :other-key "other value") ;; {:key "value", :other-key "other value"}
@@ -39,7 +40,7 @@
 ;; functions
 ;; --------------
 (defn fn-name [arg1 arg2]
-  (+ 1 2))
+  (+ arg1 arg2))
 
 ;; calling functions
 (+ 1 2)   ;; 3
@@ -48,7 +49,7 @@
 (fn-name 2 3) ;; 5
 
 ;; printing
-(println "some " "more " "test " 3)
+(println "some" "more" "test" 3) ;; prints: some more test 3
 
 ;; define local vars
 (defn authorized? [user-id]
@@ -57,16 +58,17 @@
 
 ;; destructuring vectors
 (defn get-element [[x y]]
-  (nth x
-    (nth y [[0 1]
-            [2 3]])))
+  (nth (nth [[0 1]
+             [2 3]]
+            y)
+       x))
 (def pos [1 1])
 (get-element pos) ;; 3
 
 ;; destructuring maps
-(defn elecet-user [{user-name :name}]
+(defn elect-user [{user-name :name}]
   (str user-name " for president"))
-(elecet-user {:id 2, :name "Itchy"}) ;; "Itchy for president"
+(elect-user {:id 2, :name "Itchy"}) ;; "Itchy for president"
 
 
 
@@ -85,7 +87,7 @@
 
 ;; reduce
 (reduce + [1 2 3]) ;; 6
-(reduce (fn [accumelator x] (+ accumelator x))
+(reduce (fn [accumulator x] (+ accumulator x))
         [1 2 3]) ;; 6
 
 ;; list comprehension
