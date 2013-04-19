@@ -38,10 +38,12 @@ If you like to dive deeper into the world of Clojure, here are a few sources:
 - [Clojure Homepage](http://clojure.org/)
 - [Clojure for Java Programmers](http://www.youtube.com/user/ClojureTV) by Rich Hickey (the inventor of clojure)
 - [ClojureTV](http://www.youtube.com/user/ClojureTV) - Videos of Talks
-- [Try Clojre](http://tryclj.com/) - try clojure in the bowser
-- [Programming Clojure (2nd edition)](http://pragprog.com/book/shcloj2/programming-clojure) - Book
+- [Try Clojure](http://tryclj.com/) - try Clojure in the browser
+- [Clojure Programming](http://www.clojurebook.com/) - book
+- [The Joy of Clojure (2nd edition)](http://www.manning.com/fogus2/) - book
+- [Programming Clojure (2nd edition)](http://pragprog.com/book/shcloj2/programming-clojure) - book
 - [Clojure Documentation](http://clojure-doc.org/) - community driven documentation 
-- [The Clojure Toolbox](http://www.clojure-toolbox.com/) - a list of projects by usecase
+- [The Clojure Toolbox](http://www.clojure-toolbox.com/) - a list of projects by use-case
 
 
 ## Please come prepared
