@@ -52,11 +52,15 @@ Please consult the [project readme](https://github.com/adcloud/clojure-intro-wor
 
 ## about clojure
 
-<quote>
-Clojure is a dynamic programming language that targets the Java Virtual Machine (and the CLR, and JavaScript). It is designed to be a general-purpose language, combining the approachability and interactive development of a scripting language with an efficient and robust infrastructure for multithreaded programming. Clojure is a compiled language - it compiles directly to JVM bytecode, yet remains completely dynamic. Every feature supported by Clojure is supported at runtime. Clojure provides easy access to the Java frameworks, with optional type hints and type inference, to ensure that calls to Java can avoid reflection.
+<blockquote>
+<p>
+Clojure is a <strong>dynamic programming language</strong> that <strong>targets the Java Virtual Machine</strong> (and the CLR, and JavaScript). It is designed to be a general-purpose language, combining the approachability and interactive development of a scripting language with an efficient and robust infrastructure for <strong>multithreaded programming</strong>. Clojure is a compiled language - it compiles directly to JVM bytecode, yet remains completely dynamic. Every feature supported by Clojure is supported at runtime. Clojure provides <strong>easy access to the Java frameworks</strong>, with optional type hints and type inference, to ensure that calls to Java can avoid reflection.
+</p>
 
-Clojure is a dialect of Lisp, and shares with Lisp the code-as-data philosophy and a powerful macro system. Clojure is predominantly a functional programming language, and features a rich set of immutable, persistent data structures. When mutable state is needed, Clojure offers a software transactional memory system and reactive Agent system that ensure clean, correct, multithreaded designs.
-</quote>
+<p>
+Clojure is a dialect of <strong>Lisp</strong>, and shares with Lisp the code-as-data philosophy and a <strong>powerful macro system</strong>. Clojure is predominantly a <strong>functional</strong> programming language, and features a rich set of <strong>immutable, persistent data structures</strong>. When mutable state is needed, Clojure offers a <strong>software transactional memory system</strong> and <strong>reactive Agent system</strong> that ensure clean, correct, multithreaded designs.
+</p>
+</blockquote>
 -- quoted from [clojure.org](http://clojure.org/)
 
 - Example projects
