@@ -7,8 +7,7 @@
 *Venloer Straße 25-27*    
 *50672 Köln*
 
-Tel: +49 221 292 095 0   
-E-Mail: info@adcloud.com  
+E-Mail: waldemar.schwan@adcloud.com, tjg@pentaside.org
 
 **Doors open** 16:30  
 **Workshop** 17:00 - 19:00
