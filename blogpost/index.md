@@ -1,4 +1,4 @@
-# clojure introduction workshop
+# Clojure Introduction Workshop
 
 **When?**	22.05.2013
 
@@ -16,24 +16,24 @@ E-Mail: info@adcloud.com
 Free Drinks and BBQ afterwards.
 
 
-## what you will learn
+## What you will learn
 
-This will be a very pragmatic - hands on - workshop.
-We will start with a short introduction (~30 minutes) to syntax and basic usage pattern, giving you the chance to ask questions.
+This will be a very pragmatic — hands on — workshop.
+We will start with a short introduction (~30 minutes) to syntax and basic usage patterns, giving you the chance to ask questions.
 
-After that we will encourage people to pair up and start working on our [example project](https://github.com/adcloud/clojure-intro-workshop).
+After that, we will encourage people to pair up and start working on our [example project](https://github.com/adcloud/clojure-intro-workshop).
 
-In the last 30 min. you will be encouraged to present you solution.
+In the last 30 minutes, you will be encouraged to present your solution.
 
 We will finish with a BBQ, where you can talk with other attendees or continue on your project.
 
 
-## what you will NOT learn
+## What you will NOT learn
 
-Given the limited amount of time and the zero prior knowledge character we can't explain philosophies, concepts and inner workings of things.
-After the workshop you will be able to write code in clojure but will lack a deeper understanding.
+Given the limited amount of time and the zero prior knowledge character, we can't explain philosophies, concepts and inner workings of things.
+After the workshop you will be able to write code in Clojure but will lack a deeper understanding.
 
-If you like to dive deeper into the world of clojure here are a few knowledge sources:
+If you like to dive deeper into the world of Clojure, here are a few sources:
 
 - [Clojure Homepage](http://clojure.org/)
 - [Clojure for Java Programmers](http://www.youtube.com/user/ClojureTV) by Rich Hickey (the inventor of clojure)
@@ -44,13 +44,13 @@ If you like to dive deeper into the world of clojure here are a few knowledge so
 - [The Clojure Toolbox](http://www.clojure-toolbox.com/) - a list of projects by usecase
 
 
-## please come prepared
+## Please come prepared
 
 Please make sure that you have the [basic project](https://github.com/adcloud/clojure-intro-workshop) forked and checked out on your machine.
 Please consult the [project readme](https://github.com/adcloud/clojure-intro-workshop/blob/master/README.md) for details.
 
 
-## about clojure
+## About Clojure
 
 <blockquote>
 <p>
