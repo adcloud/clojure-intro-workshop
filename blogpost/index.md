@@ -1,6 +1,6 @@
 # Clojure Introduction Workshop
 
-**When?**	22.05.2013
+**When?**	Wednesday, 22.05.2013
 
 **Where?**  
 *Adcloud GmbH*  
