@@ -40,6 +40,7 @@ If you like to dive deeper into the world of Clojure, here are a few sources:
 - [ClojureTV](http://www.youtube.com/user/ClojureTV) - videos of talks
 - [Clojure Documentation](http://clojure-doc.org/) - up-to-date community driven documentation
 - [The Clojure Toolbox](http://www.clojure-toolbox.com/) - a list of projects by use-case
+- [ClojureDocs](http://clojuredocs.org/) - API references and examples
 - [Clojure Homepage](http://clojure.org/)
 - [Clojure Programming](http://www.clojurebook.com/) - book
 - [The Joy of Clojure (2nd edition)](http://www.manning.com/fogus2/) - book
