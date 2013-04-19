@@ -64,7 +64,7 @@ Clojure is a <strong>dynamic programming language</strong> that <strong>targets 
 Clojure is a dialect of <strong>Lisp</strong>, and shares with Lisp the code-as-data philosophy and a <strong>powerful macro system</strong>. Clojure is predominantly a <strong>functional</strong> programming language, and features a rich set of <strong>immutable, persistent data structures</strong>. When mutable state is needed, Clojure offers a <strong>software transactional memory system</strong> and <strong>reactive Agent system</strong> that ensure clean, correct, multithreaded designs.
 </p>
 </blockquote>
-— quoted from [clojure.org](http://clojure.org/)
+— [clojure.org](http://clojure.org/)
 
 - Example projects
     - [Leiningen (Build system)](http://leiningen.org/)
