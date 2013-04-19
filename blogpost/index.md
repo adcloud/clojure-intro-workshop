@@ -12,7 +12,7 @@ E-Mail: waldemar.schwan@adcloud.com, tjg@pentaside.org
 **Doors open** 16:30  
 **Workshop** 17:00 - 19:00
 
-Free Drinks and BBQ afterwards.
+Free drinks and BBQ afterwards.
 
 
 ## What you will learn
