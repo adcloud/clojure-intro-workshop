@@ -1,11 +1,17 @@
 # clojure introduction workshop
 
-22.05.2013
-Adcloud Gmbh
+**When?**	22.05.2013
 
+**Where?**  
+*Adcloud GmbH*  
+*Venloer Straße 25-27*    
+*50672 Köln*
 
-Doors open 16:30
-Workshop 17:00 - 19:00
+Tel: +49 221 292 095 0   
+E-Mail: info@adcloud.com  
+
+**Doors open** 16:30  
+**Workshop** 17:00 - 19:00
 
 Free Drinks and BBQ afterwards.
 
