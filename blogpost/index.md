@@ -72,4 +72,4 @@ Clojure is a dialect of <strong>Lisp</strong>, and shares with Lisp the code-as-
 	- [Cascalog (Query Big Data)](https://github.com/nathanmarz/cascalog)
 	- [Riemann.io (Monitoring)](http://riemann.io/)
 	- [Ring](https://github.com/ring-clojure/ring) / [Compojure (Webserver)](https://github.com/weavejester/compojure)
-	- [Overtone](http://overtone.github.io/) (Collaborative Programmable Music)
+	- [Overtone (Collaborative Programmable Music)](http://overtone.github.io/)
