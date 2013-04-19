@@ -49,7 +49,7 @@ If you like to dive deeper into the world of Clojure, here are a few sources:
 ## Please come prepared
 
 Please make sure that you have the [basic project](https://github.com/adcloud/clojure-intro-workshop) forked and checked out on your machine.
-Please consult the [project readme](https://github.com/adcloud/clojure-intro-workshop/blob/master/README.md) for details.
+More details in the [project README](https://github.com/adcloud/clojure-intro-workshop/blob/master/README.md).
 
 
 ## About Clojure
