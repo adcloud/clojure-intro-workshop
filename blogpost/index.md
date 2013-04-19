@@ -36,8 +36,8 @@ After the workshop you will be able to write code in Clojure but will lack a dee
 If you like to dive deeper into the world of Clojure, here are a few sources:
 
 - [Clojure Homepage](http://clojure.org/)
-- [Clojure for Java Programmers](http://www.youtube.com/user/ClojureTV) by Rich Hickey (the inventor of clojure)
-- [ClojureTV](http://www.youtube.com/user/ClojureTV) - Videos of Talks
+- [Clojure for Java Programmers](http://www.youtube.com/watch?v=P76Vbsk_3J0) by Rich Hickey (the inventor of Clojure)
+- [ClojureTV](http://www.youtube.com/user/ClojureTV) - videos of talks
 - [Try Clojure](http://tryclj.com/) - try Clojure in the browser
 - [Clojure Programming](http://www.clojurebook.com/) - book
 - [The Joy of Clojure (2nd edition)](http://www.manning.com/fogus2/) - book
