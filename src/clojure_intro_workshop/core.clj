@@ -4,13 +4,19 @@
 (defn create-world
   "Return a vector of vectors that builds a 2D field
   with the given width and height, randomly populated with 0 and 1"
-  ([width height]
-  (apply vector
-         (map  (fn [y]
-                  (apply  vector
-                          (map (fn [_] (rand-int 2))
-                               (range width))))
-                (range height)))))
+  [width height]
+  [[0 1 1 0 1]
+   [1 0 1 0 1]
+   [0 1 0 1 0]
+   [0 1 1 0 1]])
+
+(defn create-world
+  "Return a vector of vectors that builds a 2D field
+  with the given width and height, randomly populated with 0 and 1"
+  [width height]
+  (for [_ (range height)]
+    (for [_ (range width)]
+      (rand-int 2))))
 
 (defn world-width [world]
   (count (nth world 0)))
