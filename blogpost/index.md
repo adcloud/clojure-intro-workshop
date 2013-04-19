@@ -67,9 +67,9 @@ Clojure is a dialect of <strong>Lisp</strong>, and shares with Lisp the code-as-
 -- quoted from [clojure.org](http://clojure.org/)
 
 - Example projects
-	- [Leiningen (build system)](http://leiningen.org/)
-	- [langohr (Messaging)](https://github.com/michaelklishin/langohr)
+	- [Leiningen (Build system)](http://leiningen.org/)
+	- [Langohr (Messaging)](https://github.com/michaelklishin/langohr)
 	- [Cascalog (Query Big Data)](https://github.com/nathanmarz/cascalog)
-	- [riemann.io (Monitoring)](http://riemann.io/)
-	- [Ring](https://github.com/ring-clojure/ring) / [Compojure](https://github.com/weavejester/compojure) (Webserver)
-	
+	- [Riemann.io (Monitoring)](http://riemann.io/)
+	- [Ring](https://github.com/ring-clojure/ring) / [Compojure (Webserver)](https://github.com/weavejester/compojure)
+	- [Overtone](http://overtone.github.io/) (Collaborative Programmable Music)
