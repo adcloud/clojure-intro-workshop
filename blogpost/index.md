@@ -29,7 +29,7 @@ We will finish with a BBQ, where you can talk with other attendees or continue o
 
 ## What you will NOT learn
 
-Given the limited amount of time and zero prior knowledge assumption, we can't explain philosophies, concepts and inner workings.
+Given the limited amount of time and zero-prior-knowledge assumption, we can't explain philosophies, concepts and inner workings.
 After the workshop, you will be able to write code in Clojure, but still lack a deeper understanding.
 
 If you'd like to dive deeper into Clojure's world, here's some resources:
