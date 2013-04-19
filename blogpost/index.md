@@ -29,10 +29,10 @@ We will finish with a BBQ, where you can talk with other attendees or continue o
 
 ## What you will NOT learn
 
-Given the limited amount of time and the zero prior knowledge character, we can't explain philosophies, concepts and inner workings of things.
-After the workshop you will be able to write code in Clojure but will lack a deeper understanding.
+Given the limited amount of time and the zero prior knowledge assumption, we can't explain philosophies, concepts and inner workings.
+After the workshop, you will be able to write code in Clojure, but still lack a deeper understanding.
 
-If you like to dive deeper into the world of Clojure, here are a few sources:
+If you'd like to dive deeper into Clojure's world, here's some resources:
 
 - [Try Clojure](http://tryclj.com/) - try Clojure in the browser
 - [Clojure for Java Programmers](http://www.youtube.com/watch?v=P76Vbsk_3J0) - by Rich Hickey (the inventor of Clojure)
