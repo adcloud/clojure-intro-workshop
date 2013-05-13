@@ -1,15 +1,15 @@
 (ns clojure-intro-workshop.core
   (:use quil.core))
-
-(defn create-world
-  "Return a vector of vectors that builds a 2D field
-  with the given width and height, randomly populated with 0 and 1"
-  [width height]
-  [[0 1 1 0 1]
-   [1 0 1 0 1]
-   [0 1 0 1 0]
-   [0 1 1 0 1]])
-
+;
+;(defn create-world
+;  "Return a vector of vectors that builds a 2D field
+;  with the given width and height, randomly populated with 0 and 1"
+;  [width height]
+;  [[0 1 1 0 1]
+;   [1 0 1 0 1]
+;   [0 1 0 1 0]
+;   [0 1 1 0 1]])
+;
 (defn create-world
   "Return a vector of vectors that builds a 2D field
   with the given width and height, randomly populated with 0 and 1"
@@ -28,10 +28,22 @@
   (nth (nth world y) x))
 
 
+(defn update-world [world]
+  ; This is your chance to change the world! ;)
+  world) ;; return new state
+  
+
+(defn tick [world]
+    (Thread/sleep 5000)
+    (send *agent* update-world)
+    (send *agent* tick)
+    world
+  )
+
 ;; seting up state
 ;; --------------------------
 (def world (agent (create-world 50 40)))
-
+(send world tick)
 
 ;; rendering functions
 ;; --------------------------
