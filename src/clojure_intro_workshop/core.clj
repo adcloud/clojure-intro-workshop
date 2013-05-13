@@ -58,7 +58,7 @@
 
 ;; main function
 ;; --------------------------
-(defn -main [& args]
+(defn -main []
   (defsketch example
   :title "Sketch"
   :setup setup
