@@ -15,7 +15,10 @@
 ;; , (comma) are treated as whitespace
 (def some-vector [1, 2,,, 3]) ;; [1 2 3]
 
-;; changing a vector
+;; vector operations
+;; all datatypes are imutable
+;; -> all this functions return accually new vectors
+;; this is implemented efficiently, don't worry ;)
 (cons :a [2 3]) ;; [:a 2 3]
 (conj [1 2] :c) ;; [1 2 :c]
 (assoc [1 2] 0 :a) ;; [:a 2]
@@ -31,7 +34,7 @@
 (keys some-map) ;; [:key]
 (vals some-map) ;; ["value"]
 
-;; changing a map
+;; map operations
 (assoc some-map :other-key "other value") ;; {:key "value", :other-key "other value"}
 
 
