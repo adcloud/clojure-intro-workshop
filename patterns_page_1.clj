@@ -124,6 +124,15 @@
   (println "true case")
   (println "false case")) ;; 2nd is optional
 
+;; or
+(if (or false true false) ;; behaves like an any in other languages
+  (println "true"))
+
+;; and
+(if (and true true true) ;; behaves like an all in other languages
+  (println "true"))
+
+
 ;; code block
 ;; --------------
 (if true
