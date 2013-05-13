@@ -35,16 +35,27 @@
 (assoc some-map :other-key "other value") ;; {:key "value", :other-key "other value"}
 
 
-
-
 ;; functions
 ;; --------------
-(defn fn-name [arg1 arg2]
-  (+ arg1 arg2))
 
-;; calling functions
+;; no infix for arithemtic functions
 (+ 1 2)   ;; 3
 (+ 1 2 3) ;; 6
+
+;; any function is a first class citizens
+;; including + - / ...
+(def funny-plus +)
+(funny-plus 1 2)
+
+;; you can also destroy stuff
+;; (def - +)
+;; (- 1 2) ;; 3
+
+;; defining functions
+;; you can use almost any character
+;; just don't start with / ; @ \
+(defn fn-name [arg1 arg2]
+  (+ arg1 arg2))
 
 (fn-name 2 3) ;; 5
 
@@ -53,8 +64,9 @@
 
 ;; define local vars
 (defn authorized? [user-id]
-  (let [user (db-get-user user-id)])
-    (authenticate user))
+  (let [user "user_name" ;; here could be (db-get-user user-id)
+        result true] ;; define as many variables as you like
+    result)) ;; return result
 
 ;; destructuring vectors
 (defn get-element [[x y]]
@@ -101,27 +113,19 @@
 
 
 
-
 ;; flow controll
 ;; --------------
 
 ;; if
 (if (= 1 1)
   (println "true case")
-  (println "false case"))
+  (println "false case")) ;; 2nd is optional
 
-;; condition
-(cond
-  (= 1 2) "1 == 2 case"
-  (= 1 1) "1 == 1 case"
-  :else "default case")
-
-
-;; side-effects
+;; code block
 ;; --------------
-(do
-  (println "printing is a side efect")
-  "value")
-;; prints: printing is a side efect
-;; returns "value"
+(if true
+  (do
+    (println "printing is a side efect")
+    "value") ;; do many things if true
+  "false")
 
