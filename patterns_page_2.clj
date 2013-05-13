@@ -1,29 +1,11 @@
 ;; managing state
 
-;; references
-;; --------------
-(def player-name (ref "Itchy"))
-;; #'user/player-name
-
-player-name
-; #<Ref@54088e9b: "Itchy">
-
-(deref player-name) ;; "Itchy"
-@player-name        ;; "Itchy"
-
-;; references can only be changed inside a
-;; software transaction
-(dosync
-  (ref-set player-name "Scratchy")) ;; "Scratchy"
-
-@player-name ;; "Scratchy"
-
 ;; agents
 ;; --------------
 
 (def score (agent 0))
-@score ;; 0
 (deref score) ;; 0
+@score ;; 0
 ;; an agent is in charge of managing the state
 ;; agents guarantee that changes happen in the order they arrive
 
