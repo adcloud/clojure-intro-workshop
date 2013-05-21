@@ -35,7 +35,7 @@
 
 (defn update-world [world]
   ;; This is your chance to change the world! ;)
-  world)  ;; return new state
+  world)  ;; return new world
 
 (def tick-delay 2000)
 
@@ -44,7 +44,7 @@
     (send *agent* update-world)  ;; queue an update
     (send *agent* tick)  ;; queue the next tick
     (Thread/sleep tick-delay)  ;; delay the queue for a while
-    world)  ;; always return a value which becomes the agent's new value
+    world)  ;; always return a world which becomes the agent's new state
 
 (defn start-main-loop []
   (send current-world tick))
