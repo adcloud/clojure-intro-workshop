@@ -12,13 +12,13 @@
 (last some-vector)   ;; 3
 (nth some-vector 1)  ;; 2
 
-;; , (comma) are treated as whitespace
+;; , (comma) is treated as whitespace
 (def some-vector [1, 2,,, 3]) ;; [1 2 3]
 
 ;; vector operations
-;; all datatypes are imutable
-;; -> all this functions return accually new vectors
-;; this is implemented efficiently, don't worry ;)
+;; all datatypes are immutable.
+;; that implies all these functions actually return new vectors.
+;; this is implemented efficiently; don't worry. ;)
 (cons :a [2 3]) ;; [:a 2 3]
 (conj [1 2] :c) ;; [1 2 :c]
 (assoc [1 2] 0 :a) ;; [:a 2]
@@ -41,11 +41,11 @@
 ;; functions
 ;; --------------
 
-;; no infix for arithemtic functions
+;; no infix for arithmetic functions
 (+ 1 2)   ;; 3
 (+ 1 2 3) ;; 6
 
-;; any function is a first class citizens
+;; any function is a first class citizen
 ;; including + - / ...
 (def funny-plus +)
 (funny-plus 1 2)
@@ -55,7 +55,7 @@
 ;; (- 1 2) ;; 3
 
 ;; defining functions
-;; you can use almost any character
+;; you can use almost any character.
 ;; just don't start with / ; @ \
 (defn fn-name [arg1 arg2]
   (+ arg1 arg2))
@@ -116,7 +116,7 @@
 
 
 
-;; flow controll
+;; flow control
 ;; --------------
 
 ;; if
@@ -125,19 +125,23 @@
   (println "false case")) ;; 2nd is optional
 
 ;; or
-(if (or false true false) ;; behaves like an any in other languages
+(if (or false true false) ;; behaves like an "any" in other languages
   (println "true"))
 
 ;; and
-(if (and true true true) ;; behaves like an all in other languages
+(if (and true true true) ;; behaves like an "all" in other languages
   (println "true"))
 
 
 ;; code block
 ;; --------------
+
+;; "do" allows you to treat multiple expressions as one. 
+;; all the expressions will be evaluated, but only the last will be
+;; returned.
 (if true
-  (do
+  (do  ;; do many things if true
     (println "printing is a side efect")
-    "value") ;; do many things if true
+    "value")
   "false")
 
