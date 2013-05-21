@@ -11,17 +11,18 @@ It contains
 
 ## Prerequisites
 
-- make sure you have [leiningen](http://leiningen.org/) installed
-- checkout the project
-- in the project folder run `lein deps`
-	- it should install all the dependencies
-	- you can start a interactive repl with `lein repl`
+- Make sure you have [leiningen](http://leiningen.org/) installed.
+- Checkout the project.
+- In the project folder run `lein deps`.
+	- it should install all the dependencies.
+	- you can start a interactive repl with `lein repl`.
 
 
 
 ## Handy stuff
 
-[Cheat sheet](http://clojure.org/cheatsheet)
+- This workshop's cheat sheets: [basics](https://github.com/adcloud/clojure-intro-workshop/blob/master/patterns_page_1.clj), [concurrency](https://github.com/adcloud/clojure-intro-workshop/blob/master/patterns_page_2.clj).
+- Official Clojure [cheat sheet](http://clojure.org/cheatsheet).
 
 ## License
 
