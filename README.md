@@ -1,6 +1,6 @@
 <img src="https://raw.github.com/adcloud/clojure-intro-workshop/master/doc/img/life.png" alt="Game of Life" title="Life" align="right" />
 
-# Clojure Introduction Workshop
+# Clojure Introduction
 
 In this workshop, we create a game which combines simple rules to
 create complexity.  Modelled on life, this game's rules were inspired by
