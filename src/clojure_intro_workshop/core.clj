@@ -1,18 +1,9 @@
 (ns clojure-intro-workshop.core
-  (:use quil.core))
-;
-;(defn create-world
-;  "Return a vector of vectors that builds a 2D field
-;  with the given width and height, randomly populated with 0 and 1"
-;  [width height]
-;  [[0 1 1 0 1]
-;   [1 0 1 0 1]
-;   [0 1 0 1 0]
-;   [0 1 1 0 1]])
-;
+  (:use quil.core)) ;; quil is our drawing library
+
 (defn create-world
   "Return a vector of vectors that builds a 2D field
-  with the given width and height, randomly populated with 0 and 1"
+  with the given width and height, randomly populated with 0 and 1."
   [width height]
   (for [_ (range height)]
     (for [_ (range width)]
@@ -25,44 +16,54 @@
   (count world))
 
 (defn element-at [world [x y]]
-  (nth (nth world y) x))
+  (if (or (< x 0)
+          (< y 0)
+          (>= x (world-width world))
+          (>= y (world-height world)))
+    0 ;; respect array bounds
+    (nth (nth world y) x)))
 
+;; setting up state
+;; --------------------------
+(def current-world (agent (create-world 50 40)))
 
 (defn update-world [world]
   ; This is your chance to change the world! ;)
   world) ;; return new state
-  
+
+(def tick-delay 2000)
 
 (defn tick [world]
-    (Thread/sleep 5000)
-    (send *agent* update-world)
-    (send *agent* tick)
-    world
-  )
+    ;; *agent* is dynamically bound to the agent this function was sent to
+    (send *agent* update-world)  ;; queue an update
+    (send *agent* tick) ;; queue the next tick
+    (Thread/sleep tick-delay) ;; delay the queue for a while
+    world) ;; always return a value which becomes the agent's new value
 
-;; seting up state
-;; --------------------------
-(def world (agent (create-world 50 40)))
-(send world tick)
+(defn start-main-loop []
+  (send current-world tick))
 
 ;; rendering functions
 ;; --------------------------
+
+;; called only once
 (defn setup []
   (smooth)
   (frame-rate 20)
   (background 0)) ;; black background
 
+;; called for each frame
 (defn draw []
   (stroke 0)
   (stroke-weight 0)
-  (let [tile-width (/ (width) (world-width @world))
-        tile-height (/ (height) (world-height @world))]
+  (let [tile-width (/ (width) (world-width @current-world))
+        tile-height (/ (height) (world-height @current-world))]
     (dorun ;; force evaluation of lazy sequenz
-      (for [x (range (world-width @world))
-            y (range (world-height @world))]
+      (for [x (range (world-width @current-world))
+            y (range (world-height @current-world))]
         (do ;; we do our drawing side effect here
           ;; set fill based on cell alive state
-          (fill (* 255 (element-at @world [x y])))
+          (fill (* 255 (element-at @current-world [x y])))
           ;; draw a rect for each cell
           (rect (* x tile-width) (* y tile-height)
                 tile-width tile-height))))))
@@ -70,9 +71,13 @@
 
 ;; main function
 ;; --------------------------
-(defn -main [& args]
+(defn -main []
+  ;; this is quil starting a drawing cycle
   (defsketch example
-  :title "Sketch"
-  :setup setup
-  :draw draw
-  :size [(* (world-width @world) 15) (* (world-height @world) 15)]))
+    :title "Sketch"
+    :setup setup
+    :draw draw
+    :size [(* (world-width @current-world) 15),
+           (* (world-height @current-world) 15)])
+  ;; start the never-ending main loop
+  (start-main-loop))
