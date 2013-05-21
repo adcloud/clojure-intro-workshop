@@ -17,9 +17,9 @@
 
 ;; vector operations
 ;; all datatypes are immutable.
-;; that implies all these functions actually return new vectors.
+;; that implies all these functions actually return new sequences.
 ;; this is implemented efficiently; don't worry. ;)
-(cons :a [2 3]) ;; [:a 2 3]
+(cons :a [2 3]) ;; (:a 2 3)
 (conj [1 2] :c) ;; [1 2 :c]
 (assoc [1 2] 0 :a) ;; [:a 2]
 
@@ -31,8 +31,10 @@
 (:key some-map)     ;; "value"
 (some-map :key)     ;; "value"
 (get some-map :missing-key "default") ;; "default"
-(keys some-map) ;; [:key]
-(vals some-map) ;; ["value"]
+(:missing-key some-map "default") ;; "default"
+(some-map :missing-key "default") ;; "default"
+(keys some-map) ;; (:key)
+(vals some-map) ;; ("value")
 
 ;; map operations
 (assoc some-map :other-key "other value") ;; {:key "value", :other-key "other value"}
@@ -91,14 +93,14 @@
 ;; data transformation
 ;; --------------
 ;; map
-(map inc [1 2 3])       ;; [2 3 4]
+(map inc [1 2 3])       ;; (2 3 4)
 (map (fn [x] (inc x))
-     [1 2 3])           ;; [2 3 4]
+     [1 2 3])           ;; (2 3 4)
 
 ;; filter
-(filter even? [1 2 3 4]) ;; [2 4]
+(filter even? [1 2 3 4]) ;; (2 4)
 (filter (fn [x] (even? x))
-        [1 2 3 4]) ;; [2 4]
+        [1 2 3 4]) ;; (2 4)
 
 ;; reduce
 (reduce + [1 2 3]) ;; 6
@@ -108,11 +110,11 @@
 ;; list comprehension
 (for [user ["Itchy" "Scratchy"]]
   (str user " for president!"))
-;; ["Itchy for president!" "Scratchy for president!"]
+;; ("Itchy for president!" "Scratchy for president!")
 
 (for [x [0 1]
       y [0 1]]
-    [x y]) ;; [[0 0] [0 1] [1 0] [1 1]]
+    [x y]) ;; ([0 0] [0 1] [1 0] [1 1])
 
 
 
