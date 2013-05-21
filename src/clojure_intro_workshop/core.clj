@@ -19,10 +19,13 @@
   (if (or (< x 0)
           (< y 0)
           (>= x (world-width world))
-          (>= y (world-height world))
+          (>= y (world-height world)))
     0 ;; respect array bounds
-    (nth (nth world y) x))))
+    (nth (nth world y) x)))
 
+;; setting up state
+;; --------------------------
+(def world (agent (create-world 50 40)))
 
 (defn update-world [world]
   ; This is your chance to change the world! ;)
@@ -39,10 +42,6 @@
 
 (defn start-main-loop []
   (send world tick))
-
-;; seting up state
-;; --------------------------
-(def world (agent (create-world 50 40)))
 
 ;; rendering functions
 ;; --------------------------
