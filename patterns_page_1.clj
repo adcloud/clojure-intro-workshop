@@ -31,6 +31,8 @@
 (:key some-map)     ;; "value"
 (some-map :key)     ;; "value"
 (get some-map :missing-key "default") ;; "default"
+(:missing-key some-map "default") ;; "default"
+(some-map :missing-key "default") ;; "default"
 (keys some-map) ;; (:key)
 (vals some-map) ;; ("value")
 
