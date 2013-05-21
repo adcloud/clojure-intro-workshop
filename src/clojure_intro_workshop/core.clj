@@ -25,7 +25,7 @@
 
 ;; setting up state
 ;; --------------------------
-(def world (agent (create-world 50 40)))
+(def current-world (agent (create-world 50 40)))
 
 (defn update-world [world]
   ; This is your chance to change the world! ;)
@@ -35,13 +35,13 @@
 
 (defn tick [world]
     ;; *agent* is dynamically bound to the agent this function was sent to
-    (send *agent* update-world)
-    (Thread/sleep tick-delay) ;; delay the update
-    (send *agent* tick) ;; redo this
-    world) ;; always return a state that should be bound
+    (send *agent* update-world)  ;; queue an update
+    (send *agent* tick) ;; queue the next tick
+    (Thread/sleep tick-delay) ;; delay the queue for a while
+    world) ;; always return a value which becomes the agent's new value
 
 (defn start-main-loop []
-  (send world tick))
+  (send current-world tick))
 
 ;; rendering functions
 ;; --------------------------
@@ -56,14 +56,14 @@
 (defn draw []
   (stroke 0)
   (stroke-weight 0)
-  (let [tile-width (/ (width) (world-width @world))
-        tile-height (/ (height) (world-height @world))]
+  (let [tile-width (/ (width) (world-width @current-world))
+        tile-height (/ (height) (world-height @current-world))]
     (dorun ;; force evaluation of lazy sequenz
-      (for [x (range (world-width @world))
-            y (range (world-height @world))]
+      (for [x (range (world-width @current-world))
+            y (range (world-height @current-world))]
         (do ;; we do our drawing side effect here
           ;; set fill based on cell alive state
-          (fill (* 255 (element-at @world [x y])))
+          (fill (* 255 (element-at @current-world [x y])))
           ;; draw a rect for each cell
           (rect (* x tile-width) (* y tile-height)
                 tile-width tile-height))))))
@@ -77,6 +77,7 @@
     :title "Sketch"
     :setup setup
     :draw draw
-    :size [(* (world-width @world) 15) (* (world-height @world) 15)])
+    :size [(* (world-width @current-world) 15),
+           (* (world-height @current-world) 15)])
   ;; start the never-ending main loop
   (start-main-loop))
