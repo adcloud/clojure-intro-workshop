@@ -23,6 +23,12 @@
     0 ;; respect array bounds
     (nth (nth world y) x)))
 
+(defn pretty-print-world
+  "Handy debugging util."
+  [world]
+  (doseq [row world]
+    (println row)))
+
 ;; setting up state
 ;; --------------------------
 (def current-world (agent (create-world 50 40)))
