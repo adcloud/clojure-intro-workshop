@@ -1,7 +1,7 @@
 # Clojure Introduction Workshop
 
 In this workshop, we program a game which [combines simple rules to
-create complexity]((http://www.youtube.com/watch?v=FdMzngWchDk)).
+create complexity]((http://www.youtube.com/watch?v=FdMzngWchDk).
 Modelled on life, its rules were inspired by birth, death and survival.
 
 This repo contains:
