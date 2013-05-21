@@ -25,7 +25,7 @@ This repo contains:
 
 ## Let's start!
 
-- Open [src/clojure_intro_workshop/core.clj](https://github.com/adcloud/clojure-intro-workshop/blob/master/src/clojure_intro_workshop/core.clj).
+- Open [`src/clojure_intro_workshop/core.clj`](https://github.com/adcloud/clojure-intro-workshop/blob/master/src/clojure_intro_workshop/core.clj).
 - Read the [rules of Game of
   Life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life). (Or play by
   your own rules, if you prefer.)
