@@ -1,3 +1,5 @@
+<img src="https://raw.github.com/adcloud/clojure-intro-workshop/master/doc/img/life.png" alt="Game of Life" title="Life" align="right" />
+
 # Clojure Introduction Workshop
 
 In this workshop, we program a game which combines simple rules to
