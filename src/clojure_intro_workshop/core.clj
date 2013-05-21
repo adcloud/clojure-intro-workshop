@@ -80,7 +80,7 @@
 (defn -main []
   ;; this is quil starting a drawing cycle
   (defsketch example
-    :title "Sketch"
+    :title "Game of Life"
     :setup setup
     :draw draw
     :size [(* (world-width @current-world) 15),
