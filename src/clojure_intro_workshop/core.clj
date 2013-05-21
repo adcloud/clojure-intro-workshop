@@ -2,8 +2,8 @@
   (:use quil.core)) ;; quil is our drawing library
 
 (defn create-world
-  "Return a vector of vectors that builds a 2D field
-  with the given width and height, randomly populated with 0 and 1."
+  "Return a vector of vectors, which represents a 2D field with the
+  given width and height, randomly populated with 0 and 1."
   [width height]
   (for [_ (range height)]
     (for [_ (range width)]
@@ -34,17 +34,17 @@
 (def current-world (agent (create-world 50 40)))
 
 (defn update-world [world]
-  ; This is your chance to change the world! ;)
-  world) ;; return new state
+  ;; This is your chance to change the world! ;)
+  world)  ;; return new state
 
 (def tick-delay 2000)
 
 (defn tick [world]
     ;; *agent* is dynamically bound to the agent this function was sent to
     (send *agent* update-world)  ;; queue an update
-    (send *agent* tick) ;; queue the next tick
-    (Thread/sleep tick-delay) ;; delay the queue for a while
-    world) ;; always return a value which becomes the agent's new value
+    (send *agent* tick)  ;; queue the next tick
+    (Thread/sleep tick-delay)  ;; delay the queue for a while
+    world)  ;; always return a value which becomes the agent's new value
 
 (defn start-main-loop []
   (send current-world tick))
@@ -64,10 +64,10 @@
   (stroke-weight 0)
   (let [tile-width (/ (width) (world-width @current-world))
         tile-height (/ (height) (world-height @current-world))]
-    (dorun ;; force evaluation of lazy sequenz
+    (dorun  ;; force immediate evaluation of lazy sequence
       (for [x (range (world-width @current-world))
             y (range (world-height @current-world))]
-        (do ;; we do our drawing side effect here
+        (do  ;; we do our drawing side-effects here
           ;; set fill based on cell alive state
           (fill (* 255 (element-at @current-world [x y])))
           ;; draw a rect for each cell
