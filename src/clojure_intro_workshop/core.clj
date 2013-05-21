@@ -31,7 +31,7 @@
 (def tick-delay 2000)
 
 (defn tick [world]
-    ;; *agent* is dynamically bound to the agent this function was send to
+    ;; *agent* is dynamically bound to the agent this function was sent to
     (send *agent* update-world)
     (Thread/sleep tick-delay) ;; delay the update
     (send *agent* tick) ;; redo this
@@ -47,13 +47,13 @@
 ;; rendering functions
 ;; --------------------------
 
-;; Is only called once
+;; called only once
 (defn setup []
   (smooth)
   (frame-rate 20)
   (background 0)) ;; black background
 
-;; is called for each frame
+;; called for each frame
 (defn draw []
   (stroke 0)
   (stroke-weight 0)
@@ -79,5 +79,5 @@
     :setup setup
     :draw draw
     :size [(* (world-width @world) 15) (* (world-height @world) 15)])
-  ;; start the never ending main loop
+  ;; start the never-ending main loop
   (start-main-loop))
