@@ -1,6 +1,10 @@
 # Clojure Introduction Workshop
 
-This contains:
+In this workshop, we program a game which [combines simple rules to
+create complexity]((http://www.youtube.com/watch?v=FdMzngWchDk)).
+Modelled on life, its rules were inspired by birth, death and survival.
+
+This repo contains:
 
 - a starter-kit for programming the [Game of Life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life).
 - examples which you can mold.
