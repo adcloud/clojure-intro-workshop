@@ -1,10 +1,10 @@
 # clojure-intro-workshop
 
-The project skeleton for our clojure-intro-workshop.
+Clone this to get started on the workshop!
 
-It contains
+It contains:
 
-- a project skeleton — including rendering code — for [Game of Life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life)
+- a starter-kit to help you program the [Game of Life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life)
 - code examples for typical tasks
 
 
@@ -14,8 +14,8 @@ It contains
 - Make sure you have [leiningen](http://leiningen.org/) installed.
 - Checkout the project.
 - In the project folder run `lein deps`.
-	- it should install all the dependencies.
-	- you can start a interactive repl with `lein repl`.
+	- It should install all the dependencies.
+	- You can start a interactive repl with `lein repl`.
 
 
 
