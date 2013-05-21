@@ -23,6 +23,16 @@ This repo contains:
 
 
 
+## Let's start!
+
+- Edit [clojure-intro-workshop/src/clojure_intro_workshop/core.clj](https://github.com/adcloud/clojure-intro-workshop/blob/master/src/clojure_intro_workshop/core.clj)
+- Read the [rules of Game of
+  Life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life). (Or play with
+  your own rules, if you prefer.)
+
+
+
+
 ## Cheat sheets
 
 - This workshop's cheat sheets: [basics](https://github.com/adcloud/clojure-intro-workshop/blob/master/patterns_page_1.clj), [concurrency](https://github.com/adcloud/clojure-intro-workshop/blob/master/patterns_page_2.clj).
