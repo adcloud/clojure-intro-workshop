@@ -1,8 +1,6 @@
 # Clojure Introduction Workshop
 
-Clone this to get started on the workshop!
-
-It contains:
+This contains:
 
 - a starter-kit for programming the [Game of Life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life).
 - examples which you can mold.
