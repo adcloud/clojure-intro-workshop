@@ -145,3 +145,12 @@
     "value")
   "false")
 
+
+;; looping
+;; --------------
+
+;; doseq loops and returns nil. presumably for side-effects like printing.
+;; functions like "map" can transform sequences on an optimized,
+;; as-needed basis. but doseq loops immediately.
+(doseq [stooge ["Moe" "Larry" "Curley"]]
+  (println stooge))
