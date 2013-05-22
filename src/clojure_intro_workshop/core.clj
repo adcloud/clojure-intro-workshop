@@ -39,10 +39,7 @@
 (defn live
   "This function will apply the givne update-fn cycles-times,
   print the steps and return the result"
-  ([world update-fn]
-    (live world update-fn 2)) ; use a default value of 2
-
-  ([world update-fn cycles]
+  [world update-fn cycles]
    (if (zero? cycles)
      ;; true case - just return the world
      world
@@ -50,7 +47,7 @@
      (let [new-world (update-fn world)] ; build new world
        (println "-------------------------")
        (pretty-print-world new-world) ; print it
-       (recur new-world update-fn (dec cycles)))))) ; run again until cycles are zero
+       (recur new-world update-fn (dec cycles))))) ; run again until cycles are zero
 
 ;; ------------------
 ;; Get going there
