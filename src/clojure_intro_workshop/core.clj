@@ -77,4 +77,10 @@
   world)  ;; return new world
 
 ;; create new world and do 2 cycles
-(live (create-blinker) update-world 2)
+; (live (create-blinker) update-world 2)
+
+(def w (create-blinker))
+
+;; this is a no go in normal development but for a repl it will do
+;; by running this again and again you can see the change over time
+(def w (live w update-world 1))
