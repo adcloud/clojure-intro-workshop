@@ -10,6 +10,25 @@
       (rand-int 2))))
 
 
+(defn create-blinker[]
+  [[0 1 0]
+   [0 1 0]
+   [0 1 0]])
+
+
+(defn create-glider []
+  [[0 0 0 1 0 0 0 0 0 0 0]
+   [0 1 0 1 0 0 0 0 0 0 0]
+   [0 0 1 1 0 0 0 0 0 0 0]
+   [0 0 0 0 0 0 0 0 0 0 0]
+   [0 0 0 0 0 0 0 0 0 0 0]
+   [0 0 0 0 0 0 0 0 0 0 0]
+   [0 0 0 0 0 0 0 0 0 0 0]
+   [0 0 0 0 0 0 0 0 0 0 0]
+   [0 0 0 0 0 0 0 0 0 0 0]
+   [0 0 0 0 0 0 0 0 0 0 0]])
+
+
 (defn world-width [world]
   (count (nth world 0)))
 
@@ -58,4 +77,4 @@
   world)  ;; return new world
 
 ;; create new world and do 2 cycles
-(live (create-world 5 5) update-world 2)
+(live (create-blinker) update-world 2)
