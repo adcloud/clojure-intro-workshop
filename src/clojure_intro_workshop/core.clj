@@ -31,7 +31,8 @@
   "Handy debugging util."
   [world]
   (doseq [row world]
-    (println row)))
+    (println (map (fn [cell] (if (zero? cell) " " "+"))
+                  row))))
 
 (def ppw pretty-print-world) ; alias for easy access in repl
 
@@ -45,7 +46,7 @@
      world
      ;; false case - update, print and go again
      (let [new-world (update-fn world)] ; build new world
-       (println "-------------------------")
+       (println)
        (pretty-print-world new-world) ; print it
        (recur new-world update-fn (dec cycles))))) ; run again until cycles are zero
 
