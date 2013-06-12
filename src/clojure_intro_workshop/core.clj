@@ -1,4 +1,5 @@
-(ns clojure-intro-workshop.core)
+(ns clojure-intro-workshop.core
+  (:use quil.core))
 
 
 (defn create-world
@@ -67,6 +68,7 @@
      (let [new-world (update-fn world)] ; build new world
        (println)
        (pretty-print-world new-world) ; print it
+       (update-world new-world) ;; display each step of the world
        (recur new-world update-fn (dec cycles))))) ; run again until cycles are zero
 
 ;; ------------------
@@ -84,3 +86,51 @@
 ;; this is a no go in normal development but for a repl it will do
 ;; by running this again and again you can see the change over time
 (def w (live w update-world 1))
+
+
+
+;; #####################################################
+;; here be dragons
+
+(def rendered-w (atom [[1 0]
+                       [0 1]]))
+
+(def update-world [w]
+  (reset! rendered-w))
+
+;; called only once
+(defn setup []
+  (smooth)
+  (frame-rate 20)
+  (background 0)) ;; black background
+
+;; called for each frame
+(defn draw []
+  (stroke 0)
+  (stroke-weight 0)
+  (let [tile-width (/ (width) (world-width rendered-w))
+        tile-height (/ (height) (world-height rendered-w))]
+    (dorun  ;; force immediate evaluation of lazy sequence
+      (for [x (range (world-width rendered-w))
+            y (range (world-height rendered-w))]
+        (do  ;; we do our drawing side-effects here
+          ;; set fill based on cell alive state
+          (fill (* 255 (element-at rendered-w [x y])))
+          ;; draw a rect for each cell
+          (rect (* x tile-width) (* y tile-height)
+                tile-width tile-height))))))
+
+
+;; main function
+;; --------------------------
+(defn start-rendering []
+  ;; this is quil starting a drawing cycle
+  (defsketch example
+    :title "Game of Life"
+    :setup setup
+    :draw draw
+    :size [(* (world-width rendered-w) 15),
+           (* (world-height rendered-w) 15)]))
+
+(def w (create-world 3 7))
+(start-rendering)
