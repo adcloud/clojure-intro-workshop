@@ -166,6 +166,7 @@
   Displays the result in the GUI.
   Call stop-simulation to stop it."
   [w]
+  (reset! rendered-w w)
   (send simulation-running (constantly true))
   (send simulation-running simulate))
 
