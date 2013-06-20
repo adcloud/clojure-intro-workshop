@@ -82,7 +82,8 @@
 ;; ----------------------------------------------------------------------------
 (defn update-world [world]
   ;; This is your chance to change the world! ;)
-  world
+  (create-world (world-width  world)
+                (world-height world))
   )  ;; return new world
 
 ;; To start the GUI call:
