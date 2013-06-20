@@ -216,5 +216,5 @@
     :title "Game of Life"
     :setup setup
     :draw draw
-    :size [(* (world-width @rendered-w) 15),
-           (* (world-height @rendered-w) 15)]))
+    :size [(max 200 (* (world-width  @rendered-w) 15)),
+           (max 200 (* (world-height @rendered-w) 15))]))
