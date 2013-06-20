@@ -13,7 +13,7 @@
 
 
 (defn create-blinker
-  "Creates a tiny world that containa blinker."
+  "Creates a tiny world that contains a blinker."
   [] ; empty argument vector
   [[0 1 0]
    [0 1 0]
