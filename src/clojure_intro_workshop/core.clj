@@ -79,37 +79,37 @@
 
 
 ;; Get going there
-; -----------------------------------------------------------------------------
+;; ----------------------------------------------------------------------------
 (defn update-world [world]
   ;; This is your chance to change the world! ;)
   world
   )  ;; return new world
 
-; To start the GUI call:
-; (start-rendering)
-;
-; To dispay a world call:
-; (display-world (create-blinker))
-;
-; To start a simulation of a starting world call:
-; (start-simulation (create-blinker))
-;
-; To stop the simulation:
-; (stop-simulation)
-;
-; In case of an exception adjust you update-world function and restart the
-; simulation (no need to restart anything else):
-; (start-simulation (create-blinker))
-;
-; If you prevere simple text the function ppw and live are your friends :) .
-;
-; Good luck! Have Fun. :)
-;
-;
-; PS:
-;
-; Adjust the simulation speed by calling:
-; (reset! simulation-sleep-ms 1000)
+;; To start the GUI call:
+;; (start-rendering)
+;;
+;; To dispay a world call:
+;; (display-world (create-blinker))
+;;
+;; To start a simulation call:
+;; (start-simulation (create-blinker))
+;;
+;; To stop the simulation:
+;; (stop-simulation)
+;;
+;; In case of an exception adjust you update-world function and restart the
+;; simulation (no need to restart anything else):
+;; (start-simulation (create-blinker))
+;;
+;; If you prefer simple text, the function ppw and live are your friends :) .
+;;
+;; Good luck! Have Fun. :)
+;;
+;;
+;; PS:
+;;
+;; Adjust the simulation speed by calling:
+;; (reset! simulation-sleep-ms 1000)
 
 
 
@@ -122,21 +122,21 @@
 
 
 
-; -----------------------------------------------------------------------------
-; here be dragons
+;; ----------------------------------------------------------------------------
+; Here be dragons.
 ;
 ; Code in here is stuff neede for the fancy GUI repensentation.
-; It deals with threads and shares variables. While this is fun and fairly easy
-; to write and coordinate in clojure it still should be considered a 2nd step.
-; Feel free to brows this code, but you don't have to understand any of this
+; It deals with threads and shared variables. While this is fun and fairly easy
+; to write and coordinate in Clojure, it still should be considered a 2nd step.
+; Feel free to browse this code, but you don't have to understand any of this
 ; right now ;).
-; -----------------------------------------------------------------------------
+;; ----------------------------------------------------------------------------
 
 ; The shared global state of a world.
 (def rendered-w (atom [[1 0]
                        [0 1]]))
 
-; this serves as the thread that runs the endless simulation loop
+; This serves as the thread that runs the endless simulation loop.
 (def simulation-running (agent false))
 (def simulation-sleep-ms (atom 400))
 (def fps (atom 50))
@@ -145,7 +145,7 @@
   "Executes the side effect of changing the rendered-w to the next state
   calculated by update-world.
   Also resends itself to the agent to create a endless loop.
-  Can be stoped by setting simulation-running to false.
+  Can be stopped by setting simulation-running to false.
   Use stop-simulation for this."
   [running]
   (when running
@@ -163,8 +163,8 @@
 
 (defn start-simulation
   "Starts to simulate the world in a seperate thread.
-  Displaying the result in the GUI.
-  Call stop-simulation to stop that."
+  Displays the result in the GUI.
+  Call stop-simulation to stop it."
   [w]
   (send simulation-running (constantly true))
   (send simulation-running simulate))
@@ -182,15 +182,15 @@
   (reset! rendered-w w))
 
 
-;; called only once
-; -----------------------------------------------------------------------------
+;; Called only once
+;; ----------------------------------------------------------------------------
 (defn setup []
   (smooth)
   (frame-rate @fps)
   (background 0)) ;; black background
 
-;; called for each frame
-; -----------------------------------------------------------------------------
+;; Called for each frame
+;; ----------------------------------------------------------------------------
 (defn draw []
   (stroke 0)
   (stroke-weight 0)
@@ -207,8 +207,8 @@
                 tile-width tile-height))))))
 
 
-;; main function
-; -----------------------------------------------------------------------------
+;; Main function
+;; ----------------------------------------------------------------------------
 (defn start-rendering []
   ;; this is quil starting a drawing cycle
   (defsketch example
