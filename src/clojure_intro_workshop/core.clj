@@ -84,7 +84,7 @@
   ;; This is your chance to change the world! ;)
   (create-world (world-width  world)
                 (world-height world))
-  )  ;; return new world
+  )  ;; Return new world
 
 ;; To start the GUI call:
 ;; (start-rendering)
@@ -98,8 +98,8 @@
 ;; To stop the simulation:
 ;; (stop-simulation)
 ;;
-;; In case of an exception adjust you update-world function and restart the
-;; simulation (no need to restart anything else):
+;; In case of an exception, simply adjust your update-world function
+;; and restart the simulation (no need to restart anything else):
 ;; (start-simulation (create-blinker))
 ;;
 ;; If you prefer simple text, the function ppw and live are your friends :) .
@@ -151,16 +151,16 @@
   [running]
   (when running
     (try
-      (swap! rendered-w update-world) ; side effect! assign new state
+      (swap! rendered-w update-world) ; Side effect! assign new state
       (Thread/sleep @simulation-sleep-ms)
-      (send *agent* simulate) ; trigger the loop
-      true ; this is the new value for simulation-running
+      (send *agent* simulate) ; Trigger the loop
+      true ; This is the new value for simulation-running
       (catch Exception e
         (println "Caught exception during simulation press <enter> to proceed.")
         (print-stack-trace e)
         (println "To restart the simulation simply call
                  (start-simulation <world_value>) again.")
-        false)))) ; in case of an exception stop the loop
+        false)))) ; In case of an exception stop the loop
 
 (defn start-simulation
   "Starts to simulate the world in a seperate thread.
@@ -180,7 +180,7 @@
   "Displays the given world in the GUI.
   Also stops the simulation."
   [w]
-  (stop-simulation) ; side effect
+  (stop-simulation) ; Side effect
   (reset! rendered-w w))
 
 
@@ -189,7 +189,7 @@
 (defn setup []
   (smooth)
   (frame-rate @fps)
-  (background 0)) ;; black background
+  (background 0)) ;; Black background
 
 ;; Called for each frame
 ;; ----------------------------------------------------------------------------
@@ -198,13 +198,13 @@
   (stroke-weight 0)
   (let [tile-width (/ (width) (world-width @rendered-w))
         tile-height (/ (height) (world-height @rendered-w))]
-    (dorun  ;; force immediate evaluation of lazy sequence
+    (dorun  ;; Force immediate evaluation of lazy sequence
       (for [x (range (world-width @rendered-w))
             y (range (world-height @rendered-w))]
-        (do  ;; we do our drawing side-effects here
-          ;; set fill based on cell alive state
+        (do  ;; We do our drawing side-effects here
+          ;; Set fill based on cell alive state
           (fill (* 255 (element-at @rendered-w [x y])))
-          ;; draw a rect for each cell
+          ;; Draw a rect for each cell
           (rect (* x tile-width) (* y tile-height)
                 tile-width tile-height))))))
 
@@ -212,7 +212,7 @@
 ;; Main function
 ;; ----------------------------------------------------------------------------
 (defn start-rendering []
-  ;; this is quil starting a drawing cycle
+  ;; This is Quil starting a drawing cycle.
   (defsketch example
     :title "Game of Life"
     :setup setup
