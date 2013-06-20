@@ -139,7 +139,7 @@
 
 ; This serves as the thread that runs the endless simulation loop.
 (def simulation-running (agent false))
-(def simulation-sleep-ms (atom 400))
+(def simulation-sleep-ms (atom 600))
 (def fps (atom 50))
 
 (defn simulate
