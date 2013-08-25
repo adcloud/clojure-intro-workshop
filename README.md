@@ -31,6 +31,16 @@ This repo contains:
   your own rules, if you prefer.)
 
 
+## Testing (TDD/BDD)
+
+We have included [speclj](https://github.com/slagyr/speclj).
+It's a TDD/BDD framework in Clojure.
+
+You can run all test with `lein spec`.
+
+Run `lein spec -a` for autotesting - will run every time a file is changed.
+
+Find the tests in `spec/clojure_intro_workshop/core_spec.clj`.
 
 
 ## Cheat sheets
